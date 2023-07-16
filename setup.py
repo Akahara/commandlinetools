@@ -6,5 +6,5 @@ setup(
     name='commandlinetools',
     version='1.0.0',
     description='Random command line tools',
-    scripts=['catimg'],
+    scripts=['catimg', 'git-find'],
 )
