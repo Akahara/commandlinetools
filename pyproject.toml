@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools", "setuptools-scm"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "commandlinetools"
+authors = [
+    {name = "Akahara", email = "albincalais@gmail.com"},
+]
+description = "Random command line tools"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+]
+dependencies = [
+    'Pillow',
+    'graphviz',
+    'google-api-python-client',
+    'google-auth-httplib2',
+    'google-auth-oauthlib',
+]
+dynamic = ["version"]
+
+[project.scripts]
+drivesync = "drivesync.__main__:main"
+graph-dependencies = "graphdependencies.__main__:main"
+catimg = "catimg.__main__:main"

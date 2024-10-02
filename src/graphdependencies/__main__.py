@@ -26,7 +26,6 @@ import os
 import re
 import argparse
 import codecs
-from collections import defaultdict
 from graphviz import Digraph
 
 INCLUDE_REGEX = re.compile('#include\s+["<"](.*)[">]')
@@ -104,7 +103,9 @@ def create_graph(folder):
     return graph
 
 
-if __name__ == '__main__':
+def main():
+    global external_selection_is_optin, graph_headers_only, notable_externals, excluded_internals
+
     parser = argparse.ArgumentParser()
     parser.add_argument('folder', help='Path to the folder to scan')
     parser.add_argument('output', help='Path of the output file without the extension')
@@ -129,3 +130,7 @@ if __name__ == '__main__':
     graph = create_graph(args.folder)
     graph.format = args.format
     graph.render(args.output, cleanup=True)
+
+
+if __name__ == '__main__':
+    main()

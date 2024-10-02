@@ -1,0 +1,1 @@
+ffmpeg -f lavfi -i testsrc=size=1280x720:rate=60 -vf "drawtext=fontfile=Arial.ttf: text='%{frame_num}': start_number=1: x=(w-tw)/2: y=h-(2*lh): fontcolor=black: fontsize=20: box=1: boxcolor=white: boxborderw=5" -t 30 -pix_fmt yuv420p testsrc.mp4
